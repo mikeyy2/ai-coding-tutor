@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Container, Button } from "react-bootstrap";
-import { FaCog, FaUserCircle } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 
 interface NavigationBarProps {
   toggleSidebar: () => void;

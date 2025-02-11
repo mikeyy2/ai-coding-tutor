@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Nav } from "react-bootstrap";
-import { FaCog, FaUserCircle } from "react-icons/fa";
+import { FaCog } from "react-icons/fa";
 import styles from "./Sidebar.module.css"; // Import the CSS module
 
 interface SidebarProps {
