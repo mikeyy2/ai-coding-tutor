@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Container, Button } from "react-bootstrap";
+import { FaCog, FaUserCircle } from "react-icons/fa";
 
 interface NavigationBarProps {
   toggleSidebar: () => void;
@@ -7,6 +8,7 @@ interface NavigationBarProps {
 
 const NavigationBar: React.FC<NavigationBarProps> = ({ toggleSidebar }) => {
   return (
+    
     <Navbar variant="dark" expand="lg" style={{ backgroundColor: "#121212" }}>
       <Container className="d-flex justify-content-between">
         {/* Sidebar Toggle Button on the Left with Padding */}
@@ -27,6 +29,15 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ toggleSidebar }) => {
 
         {/* Centered Title */}
         <Navbar.Brand className="mx-auto" style={{ fontSize: "1.8rem", fontWeight: "bold" }}>CodeCraft AI</Navbar.Brand>
+        <div
+          style={{
+            position: "absolute",
+            top: "20px",
+            right: "15px",
+          }}
+        >
+          <FaUserCircle color="white" size={24} />
+        </div>
       </Container>
     </Navbar>
   );

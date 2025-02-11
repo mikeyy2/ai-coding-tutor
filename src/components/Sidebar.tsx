@@ -30,12 +30,6 @@ const Sidebar: React.FC<SidebarProps> = ({ showSidebar, toggleSidebar }) => {
         ☰
       </button>
 
-      {/* Top Right Icons (Settings and Profile) */}
-      <div className={styles.topRightIcons}>
-        <FaCog color="white" size={24} />
-        <FaUserCircle color="white" size={24} />
-      </div>
-
       {/* Sidebar Content */}
       <h4 style={{ color: "white", marginTop: "40px" }}>Languages</h4>
       <Nav className="flex-column">
@@ -67,9 +61,19 @@ const Sidebar: React.FC<SidebarProps> = ({ showSidebar, toggleSidebar }) => {
           JavaScript
         </Nav.Link>
       </Nav>
+
+      {/* Settings Icon at Bottom Left */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: "10px",
+          left: "10px",
+        }}
+      >
+        <FaCog color="white" size={24} />
+      </div>
     </div>
   );
 };
 
 export default Sidebar;
-  
