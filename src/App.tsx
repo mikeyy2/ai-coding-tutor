@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavigationBar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import { Container } from "react-bootstrap";
+import Feed from "./components/Feed";
 
 const App: React.FC = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -14,7 +15,10 @@ const App: React.FC = () => {
 
       <div style={{ display: "flex" }}>
         {/* Sidebar */}
-        <Sidebar showSidebar={showSidebar} toggleSidebar={() => setShowSidebar(!showSidebar)} />
+        <Sidebar
+          showSidebar={showSidebar}
+          toggleSidebar={() => setShowSidebar(!showSidebar)}
+        />
 
         {/* Main Content */}
         <div
@@ -25,10 +29,7 @@ const App: React.FC = () => {
             flexGrow: 1,
           }}
         >
-          <Container>
-            <h1>Main Content</h1>
-            {/* Your main content goes here */}
-          </Container>
+          <Container style={{}}>{<Feed />}</Container>
         </div>
       </div>
     </div>
