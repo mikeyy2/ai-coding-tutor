@@ -26,7 +26,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ toggleSidebar }) => {
         </Button>
 
         {/* Centered Title */}
-        <Navbar.Brand className="mx-auto">CodeCraft AI</Navbar.Brand>
+        <Navbar.Brand className="mx-auto" style={{ fontSize: "1.8rem", fontWeight: "bold" }}>CodeCraft AI</Navbar.Brand>
       </Container>
     </Navbar>
   );
