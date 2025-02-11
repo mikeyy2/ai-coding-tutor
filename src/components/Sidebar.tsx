@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Nav } from "react-bootstrap";
+import { FaCog, FaUserCircle } from "react-icons/fa";
+import styles from "./Sidebar.module.css"; // Import the CSS module
 
 interface SidebarProps {
   showSidebar: boolean;
@@ -7,73 +9,60 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ showSidebar, toggleSidebar }) => {
+  const [activeLink, setActiveLink] = useState<string>("");
+
+  const handleLinkClick = (link: string) => {
+    setActiveLink(link); // Set active link on click
+  };
+
   return (
     <div
+      className={styles.sidebar} // Apply sidebar styles from CSS module
       style={{
-        position: "fixed",
-        top: 0,
         left: showSidebar ? 0 : "-250px", // Sidebar slides in/out
-        width: "250px",
-        height: "100vh",
-        backgroundColor: "#121212", // Dark background
-        transition: "left 0.3s ease", // Smooth transition for sliding in/out
-        zIndex: 1000,
-        padding: "10px",
       }}
     >
       {/* Sidebar Toggle Button */}
       <button
         onClick={toggleSidebar}
-        style={{
-          position: "absolute",
-          top: "10px", // Positioned at the top-left corner of the sidebar
-          left: "10px", // Padding on the left of the button
-          background: "transparent",
-          border: "none",
-          color: "white", // Consistent text color
-          fontSize: "24px",
-        }}
+        className={styles.sidebarButton} // Apply sidebar button styles from CSS module
       >
         ☰
       </button>
 
+      {/* Top Right Icons (Settings and Profile) */}
+      <div className={styles.topRightIcons}>
+        <FaCog color="white" size={24} />
+        <FaUserCircle color="white" size={24} />
+      </div>
+
+      {/* Sidebar Content */}
       <h4 style={{ color: "white", marginTop: "40px" }}>Languages</h4>
       <Nav className="flex-column">
-        <Nav.Link 
-          href="#Python" 
-          style={{ 
-            color: "white", 
-            backgroundColor: "#BB86FC", 
-            padding: "10px", 
-            borderRadius: "5px",
-            marginBottom: "5px",
-            textAlign: "center"
-          }}
+        <Nav.Link
+          href="#Python"
+          className={`${styles.sidebarNavLink} ${
+            activeLink === "Python" ? styles.sidebarNavLinkActive : ""
+          }`}
+          onClick={() => handleLinkClick("Python")}
         >
           Python
         </Nav.Link>
-        <Nav.Link 
-          href="#Java" 
-          style={{ 
-            color: "white", 
-            backgroundColor: "#BB86FC", 
-            padding: "10px", 
-            borderRadius: "5px",
-            marginBottom: "5px",
-            textAlign: "center"
-          }}
+        <Nav.Link
+          href="#Java"
+          className={`${styles.sidebarNavLink} ${
+            activeLink === "Java" ? styles.sidebarNavLinkActive : ""
+          }`}
+          onClick={() => handleLinkClick("Java")}
         >
           Java
         </Nav.Link>
-        <Nav.Link 
-          href="#JavaScript" 
-          style={{ 
-            color: "white", 
-            backgroundColor: "#BB86FC", 
-            padding: "10px", 
-            borderRadius: "5px",
-            textAlign: "center"
-          }}
+        <Nav.Link
+          href="#JavaScript"
+          className={`${styles.sidebarNavLink} ${
+            activeLink === "JavaScript" ? styles.sidebarNavLinkActive : ""
+          }`}
+          onClick={() => handleLinkClick("JavaScript")}
         >
           JavaScript
         </Nav.Link>
@@ -83,3 +72,4 @@ const Sidebar: React.FC<SidebarProps> = ({ showSidebar, toggleSidebar }) => {
 };
 
 export default Sidebar;
+  

@@ -1,0 +1,71 @@
+/* Sidebar container */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #121212; /* Dark background for sidebar */
+    transition: left 0.3s ease;
+    padding: 10px;
+  }
+  
+  /* Top right icons container (settings and profile icons) */
+  .topRightIcons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Sidebar toggle button (hamburger) */
+  .sidebarButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    color: white; /* Button color (white) */
+    font-size: 24px;
+  }
+  
+  /* Sidebar Links */
+  .sidebarNavLink {
+    color: white; /* Default text color */
+    text-decoration: none;
+    margin: 5px 0; /* Increase the margin for more space between buttons */
+    font-size: 18px; /* Set a suitable font size */
+    display: block;
+    padding: 15px; /* Increased padding to make buttons bigger */
+    background-color: #BB86FC; /* Set default background to purple */
+    border-radius: 5px;
+    text-align: center; /* Center the text inside the button */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+  }
+  
+  /* Hover effect for links */
+  .sidebarNavLink:hover {
+    background-color: #03DAC6; /* Change background to teal */
+    color: white; /* Keep text white on hover */
+  }
+  
+  /* Active link color */
+  .sidebarNavLinkActive {
+    background-color: #03DAC6 !important; /* Keep the background teal for active state */
+    color: white !important; /* Ensure the text stays white */
+    font-weight: bold; /* Optional: Make active link bold */
+  }
+  
+  /* Remove hover effect for active links */
+  .sidebarNavLinkActive:hover {
+    background-color: #03DAC6 !important; /* Ensure active link background stays teal */
+    color: white !important; /* Ensure text stays white on hover */
+  }
+  
+  /* Optional: Add focus styles to avoid color changes when clicked */
+  .sidebarNavLink:focus, .sidebarNavLinkActive:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px rgba(63, 189, 195, 0.7); /* Optional: Add a subtle focus ring */
+  }
+  
