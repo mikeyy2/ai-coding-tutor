@@ -1,38 +1,16 @@
-import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import NavigationBar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import { Container } from "react-bootstrap";
-import Feed from "./components/Feed";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import Level from "./Pages/Level";
 
-const App: React.FC = () => {
-  const [showSidebar, setShowSidebar] = useState(false);
-
+const App = () => {
   return (
-    <div>
-      {/* Navbar with Sidebar Toggle */}
-      <NavigationBar toggleSidebar={() => setShowSidebar(!showSidebar)} />
-
-      <div style={{ display: "flex" }}>
-        {/* Sidebar */}
-        <Sidebar
-          showSidebar={showSidebar}
-          toggleSidebar={() => setShowSidebar(!showSidebar)}
-        />
-
-        {/* Main Content */}
-        <div
-          style={{
-            marginLeft: showSidebar ? "250px" : "0", // Adjust content width based on sidebar visibility
-            transition: "margin-left 0.3s ease",
-            padding: "20px",
-            flexGrow: 1,
-          }}
-        >
-          <Container style={{}}>{<Feed />}</Container>
-        </div>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/level/:levelId" element={<Level />} />
+      </Routes>
+    </Router>
   );
 };
 

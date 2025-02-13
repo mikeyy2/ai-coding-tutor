@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Feed() {
+  const navigate = useNavigate();
+
+  const handleLevelClick = (levelId: number) => {
+    navigate(`/level/${levelId}`);
+  };
+
   const styles = {
     container: {
       display: "grid",
@@ -18,6 +25,7 @@ export default function Feed() {
       justifyContent: "center",
       fontSize: "18px",
       fontWeight: "bold",
+      cursor: "pointer", // Make it clickable
     },
   };
 
@@ -26,7 +34,11 @@ export default function Feed() {
   return (
     <div style={styles.container}>
       {Array.from({ length: 10 }, (_, index) => (
-        <div key={index} style={styles.box}>
+        <div
+          key={index}
+          style={styles.box}
+          onClick={() => handleLevelClick(index + 1)}
+        >
           Level {index + 1}
           <br />
           {descriptions[index % 4]}
