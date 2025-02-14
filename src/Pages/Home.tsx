@@ -7,7 +7,7 @@ import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true);
 
   return (
     <div>

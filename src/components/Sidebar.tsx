@@ -20,15 +20,16 @@ const Sidebar: React.FC<SidebarProps> = ({ showSidebar, toggleSidebar }) => {
       className={styles.sidebar} // Apply sidebar styles from CSS module
       style={{
         left: showSidebar ? 0 : "-250px", // Sidebar slides in/out
+        marginTop: "68px", // Match the top margin of the Navbar
       }}
     >
       {/* Sidebar Toggle Button */}
-      <button
+      {/* <button
         onClick={toggleSidebar}
         className={styles.sidebarButton} // Apply sidebar button styles from CSS module
       >
         ☰
-      </button>
+      </button> */}
 
       {/* Sidebar Content */}
       <h4 style={{ color: "white", marginTop: "40px" }}>Languages</h4>

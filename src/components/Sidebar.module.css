@@ -5,7 +5,7 @@
     left: 0;
     width: 250px;
     height: 100vh;
-    background-color: #121212; /* Dark background for sidebar */
+    background-color: #222222; /* Dark background for sidebar */
     transition: left 0.3s ease;
     padding: 10px;
   }
