@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import Level from "./Pages/Level";
+import LevelPage from "./Pages/LevelPage";
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/level/:levelId" element={<Level />} />
+        <Route path="/level/:levelId" element={<LevelPage />} />
       </Routes>
     </Router>
   );

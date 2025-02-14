@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export default function Feed() {
   const navigate = useNavigate();
 
-  const handleLevelClick = (levelId: number) => {
+  const handleLevelPageClick = (levelId: number) => {
     navigate(`/level/${levelId}`);
   };
 
@@ -37,9 +37,9 @@ export default function Feed() {
         <div
           key={index}
           style={styles.box}
-          onClick={() => handleLevelClick(index + 1)}
+          onClick={() => handleLevelPageClick(index + 1)}
         >
-          Level {index + 1}
+          LevelPage {index + 1}
           <br />
           {descriptions[index % 4]}
         </div>
